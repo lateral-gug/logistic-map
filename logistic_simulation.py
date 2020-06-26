@@ -1,11 +1,11 @@
 import numpy as np
 import pylab as pl
 
-#diagramma di biforcazione
+#bifurcation diagram
 
-cycles = 100
-points = 10**6
-size = 0.1
+cycles = 100    #number of iterations per succession
+points = 10**6  #number of generated (r0,x0) couples
+size = 0.1      #size of the printed points    
 
 r0 = np.random.uniform(2.95,4,points)
 x0 = np.random.uniform(0,1,points)
@@ -25,13 +25,13 @@ pl.figure(1)
 pl.errorbar(r0,conv,fmt='.',color='black',markersize=size)
 pl.xlabel('$r$')
 pl.ylabel('$x_{%.0f}$'%(cycles))
-pl.title('Diagramma di biforcazione')
+pl.title('Bifurcation diagram')
 
-#diagrammi di convergenza e di Moran
+#through-time-convergence and spiderweb-Moran diagrams
 
-x = np.random.uniform(0,1,1)
-r0 = np.random.uniform(2,4,1)
-n = 100
+x = np.random.uniform(0,1,1)    #initial step
+r0 = np.random.uniform(2,4,1)   #r0 parameter
+n = 100     #number of iterations
 
 pl.figure(2)
 
@@ -46,7 +46,7 @@ pl.xlabel('$n$')
 pl.ylabel('$x_n$')
 pl.ylim(-0.1,1.1)
 pl.grid(linestyle=':')
-pl.title('Diagramma di convergenza')
+pl.title('Convergence diagram')
 
 pl.figure(3)
 
@@ -67,7 +67,7 @@ pl.plot(0*ax,ax,color='grey')
 pl.plot(ax,ax,color='black',linestyle='-')
 pl.xlim(-0.1,1.1)
 pl.ylim(-0.1,1.1)
-pl.title('Diagramma a ragnatela')
+pl.title('Spiderweb diagram')
 
 pl.show()
 
